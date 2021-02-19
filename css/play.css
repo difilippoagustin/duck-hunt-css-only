@@ -50,7 +50,7 @@ p{
     background-color: black;
     color: white;
     border: white 3px solid;
-    border-radius: 1em1em;
+    border-radius: 1em;
     text-align: center;
     visibility: hidden;
     animation: rule 3.5s;
@@ -119,10 +119,10 @@ input:checked + label{
 }
 
 /* MODAL */
-#volver{
+#home{
     display: none;
 }
-#volver:target{
+#home:target{
     position: absolute;
     left: 0;
     top: 0;
@@ -137,9 +137,15 @@ input:checked + label{
     color: white;
     border: white 3px solid;
     border-radius: 1em;
+    font-weight: bold;
+    /* font-size: 1.5em; */
     background-color: black;
     width: 50%;
     position: relative;
+}
+.modal-content > a{
+    color: aqua;
+    text-decoration: none;
 }
 
 /* ASIGNACIÓN DE ANIMACIONES A LOS PATOS */
