@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+:root{
+    --green: #184d10;
+    --brown: #c74a0c;
+    --blue: #60d1e3;
+}
+body{
+    background-image: url('https://miro.medium.com/max/1000/1*CHpGqF5_AjZCgQokepOIHQ.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+/* ANIMACIÓN DEL LOGO */
+.css-only{
+    animation: logo 3s;
+    color: var(--brown);
+    position: fixed;
+    transform: rotate(390deg);
+    transform: origin(50%,50%,50%);
+    left: 10%;
+    top: 30%;
+    font-size:5.5em;
+    font-family: 'DotGothic16', sans-serif;
+}
+.css-only::after{
+    content: 'Solo CSS';
+}
+@keyframes logo {
+    0%{ transform: rotate(45deg); transform: scale(4, 4); color: transparent; }
+    50%{ color: var(--brown); }
+    100%{ transform: rotate(390deg) }
+}
+/* LOGO */
+.logo{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+    position: fixed;
+    bottom: -90%;
+}
+/* BOTÓN "JUGAR" */
+.play{
+    top: 50px;
+    animation: play 1s infinite;
+    text-decoration: none;
+    color: var(--blue);
+    font-weight:bolder;
+    font-family: 'DotGothic16', sans-serif;
+    font-size: 2em;
+    background-color: wheat;
+    border: 1px solid black;
+    border-radius: 1em;
+}
+@keyframes play {
+    0%{ transform: scale(1, 1); }
+    50%{ transform: scale(1.5, 1.5); }
+    100%{ transform: scale(1, 1); }
+}
+@media (max-width: 768px){
+    .css-only{
+        top: 35%;
+    }
+    .css-only::after{
+        content: 'CSS';
+    }
+}

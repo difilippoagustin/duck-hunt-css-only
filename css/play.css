@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+*{
+    font-family: 'DotGothic16', sans-serif;
+}
+body{
+    counter-reset: ducks-kills;
+    background-image: url('https://raw.githubusercontent.com/vaielab/DuckHuntCss/master/stage.png');
+    cursor: cell !important;
+}
+
+p{
+    width: 100%;
+    text-align: center;
+}
+.game-box{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+/* MENU */
+.menu{
+    text-align: center;
+}
+.score{
+    display: inline-flex;
+    position:fixed;
+    align-items: center;
+    bottom: 0%;
+    height: 10%;
+    width: 50%;
+    right: 25%;
+    background-color: black;
+    color: white;
+    border: white 3px solid;
+    border-radius: 1em1em;
+}
+@media (max-width: 768px){
+    .score{
+        border: none;
+        border-top: white 3px solid;
+        width: 100vw;
+        left: 0;
+    }
+}
+
+/* REGLAS DEL JUEGO */
+.rules{
+
+    background-color: black;
+    color: white;
+    border: white 3px solid;
+    border-radius: 1em1em;
+    text-align: center;
+    visibility: hidden;
+    animation: rule 3.5s;
+}
+@keyframes rule {
+    0% { visibility: hidden; }
+    50% { visibility:visible; }
+    100% { visibility: hidden; }
+}
+
+.back-home{
+    text-decoration: none;
+    font-size: 1.5em;
+    color: blue;
+}
+
+/* NÚMERO DE MUERTES */
+.kills{
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  color: white;
+  content: counter(ducks-kills);
+}
+.kills:after{
+    content: counter(ducks-kills);
+}
+
+/* SE OCULTAN LOS INPUT */
+input{
+    display: inline;
+    padding-left: 25%;
+    padding-right: 25%;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* PATO VOLANDO */
+.duck + .label{
+    width: 15%;
+    height: 15%;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-image: url('https://iconape.com/wp-content/png_logo_vector/duck-hunt-logo.png');
+    background-color: transparent;
+    position: fixed;
+}
+
+input:not(:checked){
+    opacity: 1;
+}
+
+/* "MIRA DEL ARMA" */
+input:hover + label{
+    cursor: crosshair;
+}
+
+/* PATO MUERTO */
+input:checked + label{
+    counter-increment: ducks-kills;
+    animation: none !important;
+    pointer-events: none;
+    width: 10% !important;
+    height: 10% !important;
+    background-image: url('https://www.spriters-resource.com/resources/sheet_icons/12/13056.png') !important;
+}
+
+/* MODAL */
+#volver{
+    display: none;
+}
+#volver:target{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal-content{
+    color: white;
+    border: white 3px solid;
+    border-radius: 1em;
+    background-color: black;
+    width: 50%;
+    position: relative;
+}
+
+/* ASIGNACIÓN DE ANIMACIONES A LOS PATOS */
+#check1 + .label1{
+    animation: fly1 10s 3.5s alternate;
+}
+#check2 + .label2{
+    animation: fly2 10s 3.5s alternate;
+}
+#check3 + .label3{
+    animation: fly3 10s 3.5s alternate;
+}
+#check4 + .label4{
+    animation: fly4 10s 3.5s alternate;
+}
+#check5 + .label5{
+    animation: fly5 10s 3.5s alternate;
+}
+#check6 + .label6{
+    animation: fly6 10s 3.5s alternate;
+}
+#check7 + .label7{
+    animation: fly7 10s 3.5s alternate;
+}
+#check8 + .label8{
+    animation: fly8 10s 3.5s alternate;
+}
+#check9 + .label9{
+    animation: fly9 10s 3.5s alternate;
+}
+#check10 + .label10{
+    animation: fly10 10s 3.5s alternate;
+}
+
+/* ANIMACIONES DE LOS PATOS */
+@keyframes fly1 {
+    0%   { left:0%;right:37%;top:11%;bottom:96%; }
+    20%  { left:20%;top:50%;bottom:35%;right:1%; }
+    40%  { top:30%;left:60%;bottom:38%;right:43%; }
+    60%  { top:80%;left:80%;bottom:73%;right:27%; }
+    80%  { transform: scaleX(-1);top:10%;left:20%;bottom:31%;right:88%; }
+    100% { top:30%;left:20%;bottom:17%;right:47%; }
+}
+@keyframes fly2 {
+    0%   { left:16%;right:31%;top:65%;bottom:58%; }
+    20%  { left:88%;top:15%;bottom:91%;right:25%; }
+    40%  { transform: scaleX(-1);left:16%;top:79%;bottom:51%;right:97%; }
+    60%  { left:67%;top:15%;bottom:84%;right:6%; }
+    80%  { left:81%;top:45%;bottom:50%;right:15%; }
+    100% { transform: scaleX(-1);left:14%;top:73%;bottom:85%;right:45%; }
+}
+@keyframes fly3 {
+    0%    { left:83%;right:37%;top: 2%;bottom:80%; }
+    20%   { transform: scaleX(-1);left:30%;top:5%;bottom:89%;right:26%; }
+    40%   { transform: scaleX(-1);left:17%;top:15%;bottom:70%;right:13%; }
+    60%   { left:17%;top:5%;bottom:2%;right:26%; }
+    80%   { left:82%;top:17%;bottom:20%;right:13%; }
+    100%  { transform: scaleX(-1);left:30%;top:11%;bottom:96%;right:80%; }
+}
+@keyframes fly4 {
+    0%   { left:23%;right: 62%;top: 5%;bottom:67%; }
+    20%  { transform: scaleX(-1);left:2%;top:11%;bottom:70%;right:79%; }
+    40%  { left:9%;top:14%;bottom:79%;right:47%; }
+    60%  { left:11%;top:40%;bottom:14%;right:89%; }
+    80%  { transform: scaleX(-1);left:6%;top:5%;bottom:96%;right:12%; }
+    100% { left:40%;top:22%;bottom:57%;right:49%; }
+}
+@keyframes fly5 {
+    0%   { left:8%;right: 23%;top: 84%;bottom:72%; }
+    20%  { left:12%;top:21%;bottom:39%;right:45%; }
+    40%  { left:80%;top:78%;bottom:25%;right:5%; }
+    60%  { transform: scaleX(-1);left:21%;top:61%;bottom:81%;right:86%; }
+    80%  { left:67%;top:52%;bottom:64%;right:48%; }
+    100% { left:61%;top:3%;bottom:28%;right:76%; }
+}
+@keyframes fly6 {
+    0%   { left:80%;right: 3%;top: 68%;bottom:73%; }
+    20%  { transform: scaleX(-1);left:35%;top:79%;bottom:44%;right:55%; }
+    40%  { left:32%;top:2%;bottom:74%;right:48%; }
+    60%  { transform: scaleX(-1);left:3%;top:75%;bottom:15%;right:14%; }
+    80%  { left:4%;top:77%;bottom:28%;right:72%; }
+    100% { left:46%;top:12%;bottom:97%;right:7%; }
+}
+@keyframes fly7 {
+    0%   { left:17%;right: 9%;top: 36%;bottom:87%; }
+    20%  { transform: scaleX(-1);left:2%;top:12%;bottom:23%;right:11%; }
+    40%  { left:79%;top:54%;bottom:68%;right:84%; }
+    60%  { transform: scaleX(-1);left:19%;top:31%;bottom:15%;right:10%; }
+    80%  { left:80%;top:70%;bottom:29%;right:59%; }
+    100% { transform: scaleX(-1);left:32%;top:66%;bottom:90%;right:49%; }
+}
+@keyframes fly8 {
+    0%   { left:7%;right:79%;top:4%;bottom:16%; }
+    20%  { left:6%;top:68%;bottom:39%;right:45%; }
+    40%  { left:41%;top:8%;bottom:48%;right:58%; }
+    60%  { left:37%;top:35%;bottom:91%;right:62%; }
+    80%  { transform: scaleX(-1);left:22%;top:32%;bottom:70%;right:89%; }
+    100% { left:78%;top:38%;bottom:95%;right:21%; }
+}
+@keyframes fly9 {
+    0%   { left:81%;right:23%;top:28%;bottom:61%; }
+    20%  { left:83%;top:74%;bottom:18%;right:41%; }
+    40%  { transform: scaleX(-1);left:37%;top:73%;bottom:70%;right:65%; }
+    60%  { left:71%;top:53%;bottom:63%;right:99%; }
+    80%  { left:81%;top:21%;bottom:20%;right:71%; }
+    100% { transform: scaleX(-1);left:79%;top:9%;bottom:61%;right:48%; }
+}
+@keyframes fly10 {
+    0%   { left:7%;right:24%;top:65%;bottom:1%; }
+    20%  { left:20%;top:37%;bottom:49%;right:54%; }
+    40%  { left:66%;top:70%;bottom:89%;right:96%; }
+    60%  { transform: scaleX(-1);left:17%;top:5%;bottom:2%;right:26%; }
+    80%  { left:30%;top:11%;bottom:96%;right:80%; }
+    100% { left:82%;top:17%;bottom:20%;right:13%; }
+}
