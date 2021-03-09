@@ -69,6 +69,7 @@ body{
 
 .logo >.play:focus,.play:hover{
     animation: 1s hover infinite;
+    /* border-color: black; */
 }
 @keyframes hover {
     0%{ background-color: #d21424; }
