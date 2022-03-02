@@ -6,6 +6,9 @@ body{
     counter-reset: ducks-kills;
     background-image: url('https://raw.githubusercontent.com/vaielab/DuckHuntCss/master/stage.png');
     cursor: cell !important;
+    background-color: #887000;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 p{
